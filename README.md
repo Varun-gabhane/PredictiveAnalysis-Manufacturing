@@ -1,38 +1,53 @@
 Predictive Analysis for Manufacturing Operations
 
-Objective:- This project involves creating a RESTful API that performs predictive analysis on manufacturing data to predict machine downtime or production defects. The API provides endpoints for uploading data, training a model, and making predictions.
+Objective :- This project involves creating a RESTful API that performs predictive analysis on manufacturing data to predict machine downtime or production defects. 
+		    The API provides endpoints for uploading data, training a model, and making predictions.
 
-Setup Instructions:-
+   
+
+Setup Instructions:
+
 Prerequisites
 Python: Ensure Python 3.8+ is installed on your system.
 Libraries: Install the necessary Python libraries using the provided requirements.txt file.
 
 Installation Steps
 Clone the repository:
-git clone <https://github.com/Varun-gabhane/PredictiveAnalysis-Manufacturing>
-cd <repository-folder>
+						git clone <https://github.com/Varun-gabhane/PredictiveAnalysis-Manufacturing>
+											cd <repository-folder>
 
 Create and activate a virtual environment:
-python -m venv venv
-source venv/bin/activate # For Linux/Mac
-venv\Scripts\activate   # For Windows
+												python -m venv venv
+									source venv/bin/activate # For Linux/Mac
+									  venv\Scripts\activate   # For Windows
+
+
+
 
 Install dependencies:
-pip install -r requirements.txt
+						pip install -r requirements.txt
+
 
 Run the Flask app:
-python src/app.py
+						python src/app.py
+
+
+
+
 
 API Endpoints
 
 1. Upload Endpoint
-URL: /upload
-Method: POST
-Description: Accepts a CSV file containing manufacturing data and saves it for training.
+
+URL:	 /upload
+Method: 	POST
+Description: 	Accepts a CSV file containing manufacturing data and saves it for training.
+
 Request:
 Form-data:
-Key: file
-Value: CSV file (e.g., manufacturing_defect_dataset.csv)
+Key: 	file
+Value: 	CSV file (e.g., manufacturing_defect_dataset.csv)
+
 Response:
 {
   "message": "File uploaded successfully to [data/raw/manufacturing_defect_dataset.csv]"
@@ -42,6 +57,7 @@ Response:
 URL: /train
 Method: POST
 Description: Trains the predictive model using the uploaded dataset and returns performance metrics.
+
 Request: No input required.
 Response: {
   "accuracy": 0.95,
@@ -52,6 +68,7 @@ Response: {
 URL: /predict
 Method: POST
 Description: Accepts JSON input with manufacturing parameters and predicts machine downtime.
+
 Request (Example):
 {
   "Temperature": 80,
@@ -63,7 +80,10 @@ Response (Example):
   "Confidence": 0.85
 }
 
+
+
 Example API Requests and Responses
+
 Example 1: Upload Dataset
 Request:
 POST /upload
